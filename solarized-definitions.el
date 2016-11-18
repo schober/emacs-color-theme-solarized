@@ -248,10 +248,12 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (lazy-highlight (:inherit match)) ; Search
                 (menu (,@fg-base0 ,@bg-base02))
                 (minibuffer-prompt (,@fmt-bold ,@fg-cyan)) ; Question
-                (mode-line ; StatusLine
-                 (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))
-                (mode-line-inactive    ; StatusLineNC
-                 (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))
+                ;; (mode-line ; StatusLine
+                ;;  (,@fg-base1 ,@bg-base02 ,@fmt-revbb :box nil))
+                ;; (mode-line-inactive    ; StatusLineNC
+                ;;  (,@fg-base00 ,@bg-base02 ,@fmt-revbb :box nil))
+                (mode-line-inactive (,@bg-base1 ,@fg-base02 :box nil :inverse-video nil))
+                (mode-line (:inherit mode-line-inactive ,@bg-cyan :box nil :inverse-video nil))
                 (region (,@fg-base01 ,@bg-base03 ,@fmt-revbb)) ; Visual
                 (secondary-selection (,@bg-base02))
                 (shadow (,@fg-base01))
@@ -674,10 +676,30 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (rainbow-delimiters-depth-8-face (:inherit outline-8))
                 (rainbow-delimiters-depth-9-face (,@fg-green))
                 ;; powerline
-                (powerline-active1 (,@fg-base00 :inherit mode-line))
-                (powerline-active2 (,@fg-base0 :inherit mode-line))
-                (powerline-inactive1 (,@fg-base02 ,@bg-base1 :inherit mode-line-inactive))
-                (powerline-inactive2 (,@fg-base01 :inherit mode-line-inactive))
+                (powerline-active0
+                 (:inherit powerline-inactive0 ,@bg-cyan))
+                (powerline-active0-bold
+                 (:inherit powerline-active0 :weight bold))
+                (powerline-active1
+                 (:inherit powerline-inactive1))
+                (powerline-active1-bold
+                 (:inherit powerline-active1 :weight bold))
+                (powerline-active1-warning
+                 (:inherit powerline-active1 ,@bg-red ,@fg-base03))
+                (powerline-active2
+                 (:inherit powerline-inactive2))
+                (powerline-inactive0
+                 (:inherit mode-line-inactive ,@bg-base1 ,@fg-base02))
+                (powerline-inactive0-bold
+                 (:inherit powerline-inactive0 :weight bold))
+                (powerline-inactive1
+                 (:inherit mode-line ,@bg-base01 ,@fg-base02))
+                (powerline-inactive1-bold
+                 (:inherit powerline-inactive1 :weight bold))
+                (powerline-inactive1-warning
+                 (:inherit powerline-inactive1))
+                (powerline-inactive2
+                 (:inherit mode-line ,@bg-base02 ,@fg-base00))
                 ;; slime
                 (slime-error-face (,@fmt-revr ,@fg-red)) ; ErrorMsg
                 (slime-note-face (,@fg-yellow))

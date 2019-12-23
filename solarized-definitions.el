@@ -365,9 +365,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 ;; org
                 (org-block-background (,@bg-base02))
                 (org-hide (,@fg-base03))
-                (org-todo (,@fmt-bold ,@fg-base03 ,@bg-red))
+                (org-todo (,@fmt-bold ,@fg-yellow))
                 (org-done (,@fmt-bold ,@fg-green))
-                (org-todo-kwd-face (,@fmt-bold ,@fg-base03 ,@bg-red))
+                (org-todo-kwd-face (,@fmt-bold ,@fg-yellow))
                 (org-done-kwd-face (,@fmt-bold ,@fg-green))
                 (org-project-kwd-face (,@fg-violet ,@bg-base03))
                 (org-waiting-kwd-face (,@fg-orange ,@bg-base03))
